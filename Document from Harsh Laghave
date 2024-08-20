@@ -1,0 +1,109 @@
+#include<iostream>
+using namespace std;
+int i,n;
+class bank{
+public:
+char name[10];
+int accno;
+int amount;
+
+void depo(){
+int ac;
+cout<<"Enter Account Number :";
+cin>>ac;
+if(ac==accno){
+int dep;
+cout<<"Enter Amount to Deposit";
+cin>>dep;
+amount+=dep;
+cout<<"Amount Depo Success"<<amount;
+
+}
+}
+
+void with(){
+int with,aa;
+cout<<"Enter Account Number :";
+cin>>aa;
+if(aa==accno){
+cout<<"Account No Matched";
+	
+	
+}
+if(with<amount){
+cout<<"Enter The withdraw Amount";
+cin>>with;
+amount-=with;
+cout<<"Amount Withdraw Success";
+cout<<"Balance is :"<<amount;
+}
+else{
+cout<<"Amount Exceeds";
+}
+}
+
+void display(){int a;
+cout<<"Enter Account Number:";
+cin>>a;
+if(a==accno){
+cout<<"Name: "<<name;
+cout<<"Balance: "<<amount;
+
+}
+else{
+cout<<"Account Number Not Matched";
+
+}
+}
+
+
+};
+
+int main()
+{
+bank b1[n];
+for( i=0;i<n;i++){
+cout<<"Enter The No of accounts";
+cin>>n;
+cout<<"Enter name";
+cin>>b1[i].name;
+cout<<"Enter The Account No";
+cin>>b1[i].accno;
+cout<<"Enter The Initial Amount";
+cin>>b1[i].amount;
+
+
+}
+
+for(int i=0;i<n;i++){
+int ch;
+cout<<"\nEnter The Choice for" <<"i+1:"<<"account"<<"\n1.Deposit\n2.Withdraw\n3.Display\n4.Exit";
+cin>>ch;
+switch(ch)
+{
+case 1:b1[i].depo();
+	break;
+case 2:b1[i].with();
+	break;
+case 3:b1[i].display();
+	break;
+case 4:break;
+default:cout<<"Wrong Choice";
+	break;
+	
+}
+}
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
